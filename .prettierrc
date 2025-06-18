@@ -1,0 +1,26 @@
+{
+  "trailingComma": "none",
+  "tabWidth": 2,
+  "semi": false,
+  "singleQuote": true,
+  "bracketSameLine": true,
+  "htmlWhitespaceSensitivity": "ignore",
+  "importOrderSortSpecifiers": false,
+  "importOrderCaseInsensitive": true,
+  "overrides": [
+    {
+      "files": "CHANGELOG.md",
+      "options": {
+        "tabWidth": 2,
+        "parser": "markdown"
+      }
+    },
+    {
+      "files": "*.json",
+      "options": {
+        "tabWidth": 2,
+        "parser": "json-stringify"
+      }
+    }
+  ]
+}

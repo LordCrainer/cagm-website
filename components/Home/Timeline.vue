@@ -7,20 +7,24 @@
       </h2>
 
       <div class="relative">
-        <div class="absolute left-1/2 md:left-1/2 left-4 transform md:-translate-x-1/2 w-1 bg-blue-200 h-full timeline-line"></div>
+        <div
+          class="absolute left-1/2 md:left-1/2 left-4 transform md:-translate-x-1/2 w-1 bg-blue-200 h-full timeline-line"></div>
 
         <div class="space-y-12">
-          <div 
-            v-for="(experience, index) in experiences" 
+          <div
+            v-for="(experience, index) in experiences"
             :key="index"
             class="relative flex items-center timeline-item">
-            
-            <div class="absolute left-1/2 md:left-1/2 left-4 transform md:-translate-x-1/2 -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-lg z-10 timeline-dot"></div>
-            
-            <div :class="[
-              'w-full md:w-1/2',
-              index % 2 === 0 ? 'md:pr-8 pl-12 md:pl-0' : 'md:ml-auto md:pl-8 pl-12'
-            ]">
+            <div
+              class="absolute left-1/2 md:left-1/2 left-4 transform md:-translate-x-1/2 -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-lg z-10 timeline-dot"></div>
+
+            <div
+              :class="[
+                'w-full md:w-1/2',
+                index % 2 === 0
+                  ? 'md:pr-8 pl-12 md:pl-0'
+                  : 'md:ml-auto md:pl-8 pl-12'
+              ]">
               <TimelineCard
                 :company="experience.company"
                 :position="experience.position"
@@ -63,12 +67,40 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
+    company: 'Lanubetv S.A.',
+    position: 'Consultor técnico por contrato',
+    location: 'Guayaquil, Ecuador',
+    workMode: 'Remoto',
+    period: 'Enero 2021 – Presente',
+    description:
+      'Dirigí el diseño, desarrollo e implementación de una nueva plataforma optimizada de gran calidad.',
+    achievements: [
+      'Automaticé el proceso de conversión reduciendo tiempos de 1h a 4 min (+93% eficiencia)',
+      'Reduje costos de almacenamiento del 90% migrando a Space Storage (S3)',
+      'Eliminé servidor Windows Server reduciendo costos en un 65%',
+      'Disminuí costos adicionales en un 35% optimizando la infraestructura',
+      'Implementé Screaming Architecture, testing y CI/CD'
+    ],
+    projects: [],
+    technologies: [
+      'Node.js',
+      'Ffmpeg/Ffmbc',
+      'Vue.js',
+      'Quasar',
+      'Docker',
+      'GitHub Actions',
+      'Vitest',
+      'MongoDB'
+    ]
+  },
+  {
     company: 'Consultor Técnico Independiente',
     position: 'Desarrollador Senior por contrato',
     location: 'Guayaquil, Ecuador',
     workMode: 'Remoto',
     period: 'Diciembre 2023 – Enero 2025',
-    description: 'Gestioné el mantenimiento y la optimización de 5 sistemas complejos para un proyecto internacional.',
+    description:
+      'Gestioné el mantenimiento y la optimización de 5 sistemas complejos para un proyecto internacional.',
     achievements: [
       'Contribuí al aumento del 24% en el MRR anual',
       'Obtuve un MRR del 50% en Q2 gracias al desarrollo de una nueva funcionalidad',
@@ -77,7 +109,15 @@ const experiences: Experience[] = [
       'Desarrollé 3 nuevos workers utilizando GCF y Cloud Scheduler'
     ],
     projects: [],
-    technologies: ['Node.js', 'Angular', 'Flutter', 'MongoDB', 'Big Query', 'WorkOS', 'GCP']
+    technologies: [
+      'Node.js',
+      'Angular',
+      'Flutter',
+      'MongoDB',
+      'Big Query',
+      'WorkOS',
+      'GCP'
+    ]
   },
   {
     company: 'Nextgen',
@@ -85,7 +125,8 @@ const experiences: Experience[] = [
     location: 'Guayaquil, Ecuador',
     workMode: 'Híbrido',
     period: 'Junio 2021 – Abril 2024',
-    description: 'Lideré múltiples proyectos y equipos de desarrollo, implementando soluciones escalables y optimizando procesos.',
+    description:
+      'Lideré múltiples proyectos y equipos de desarrollo, implementando soluciones escalables y optimizando procesos.',
     achievements: [
       'Lideré un equipo de 5 desarrolladores y 1 QA',
       'Implementé mejoras que redujeron los tiempos de desarrollo en un 20%',
@@ -96,7 +137,8 @@ const experiences: Experience[] = [
       {
         name: 'Senscloud',
         period: '2021 - 2024',
-        description: 'Gestión del desarrollo de nuevas funcionalidades para los clientes'
+        description:
+          'Gestión del desarrollo de nuevas funcionalidades para los clientes'
       },
       {
         name: 'Xtrim',
@@ -106,7 +148,8 @@ const experiences: Experience[] = [
       {
         name: 'Nextsign',
         period: '2024',
-        description: 'Resolución de errores críticos y desarrollo de nuevas características'
+        description:
+          'Resolución de errores críticos y desarrollo de nuevas características'
       },
       {
         name: 'NextTrace',
@@ -114,24 +157,15 @@ const experiences: Experience[] = [
         description: 'Desarrollo e implementación de arquitectura serverless'
       }
     ],
-    technologies: ['Node.js', 'Angular', 'React', 'MongoDB', 'PostgreSQL', 'Docker', 'AWS']
-  },
-  {
-    company: 'Lanubetv S.A.',
-    position: 'Consultor técnico por contrato',
-    location: 'Guayaquil, Ecuador',
-    workMode: 'Remoto',
-    period: 'Enero 2021 – Presente',
-    description: 'Dirigí el diseño, desarrollo e implementación de una nueva plataforma optimizada de gran calidad.',
-    achievements: [
-      'Automaticé el proceso de conversión reduciendo tiempos de 1h a 4 min (+93% eficiencia)',
-      'Reduje costos de almacenamiento del 90% migrando a Space Storage (S3)',
-      'Eliminé servidor Windows Server reduciendo costos en un 65%',
-      'Disminuí costos adicionales en un 35% optimizando la infraestructura',
-      'Implementé Screaming Architecture, testing y CI/CD'
-    ],
-    projects: [],
-    technologies: ['Node.js', 'Ffmpeg/Ffmbc', 'Vue.js', 'Quasar', 'Docker', 'GitHub Actions', 'Vitest', 'MongoDB']
+    technologies: [
+      'Node.js',
+      'Angular',
+      'React',
+      'MongoDB',
+      'PostgreSQL',
+      'Docker',
+      'AWS'
+    ]
   }
 ]
 </script>
@@ -143,12 +177,12 @@ const experiences: Experience[] = [
   .timeline-line {
     left: 1rem;
   }
-  
+
   /* Las cartas ocupan todo el ancho disponible */
   .timeline-item {
     padding-left: 3rem;
   }
-  
+
   /* Los dots se mueven al lado izquierdo */
   .timeline-dot {
     left: 1rem;

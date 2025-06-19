@@ -127,5 +127,7 @@ function stopAutomaticGeneration() {
   }
 }
 
-generateRandomCircles()
+onMounted(() => {
+  generateRandomCircles()
+})
 </script>

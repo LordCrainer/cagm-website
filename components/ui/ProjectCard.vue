@@ -30,15 +30,9 @@
           {{ project.title }}
         </h3>
         <div class="flex items-center space-x-2">
-          <span
-            :class="
-              project.isPublic
-                ? 'bg-green-100 text-green-800'
-                : 'bg-gray-100 text-gray-800'
-            "
-            class="px-2 py-1 text-xs font-medium rounded-full">
+          <Chip :variant="project.isPublic ? 'success' : 'warning'">
             {{ project.isPublic ? 'Público' : 'Privado' }}
-          </span>
+          </Chip>
         </div>
       </div>
     </div>
@@ -48,12 +42,12 @@
     </p>
 
     <div class="flex flex-wrap gap-2 mb-4">
-      <span
+      <Chip
         v-for="tech in project.technologies"
         :key="tech"
-        class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-md">
+        rounded="md">
         {{ tech }}
-      </span>
+      </Chip>
     </div>
 
     <div class="flex items-center justify-between">
@@ -125,6 +119,7 @@
 
 <script lang="ts" setup>
 import type { Project } from '~/composables/useProjects'
+import Chip from './Chip.vue';
 
 interface Props {
   project: Project

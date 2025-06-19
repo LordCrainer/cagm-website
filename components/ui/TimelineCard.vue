@@ -24,17 +24,16 @@
         </svg>
         {{ location }}
         <span class="mx-2">•</span>
-        <span
-          :class="[
-            'px-2 py-1 rounded-full text-xs font-medium',
+        <Chip
+          :variant="
             workMode === 'Remoto'
-              ? 'bg-green-100 text-green-700'
+              ? 'success'
               : workMode === 'Presencial'
-                ? 'bg-blue-100 text-blue-700'
-                : 'bg-purple-100 text-purple-700'
-          ]">
+                ? 'info'
+                : 'warning'
+          ">
           {{ workMode }}
-        </span>
+        </Chip>
       </div>
       <div class="flex items-center text-sm text-gray-500">
         <svg
@@ -87,17 +86,16 @@
 
     <!-- Tecnologías -->
     <div class="flex flex-wrap gap-1.5">
-      <span
-        v-for="tech in technologies"
-        :key="tech"
-        class="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full font-medium">
+      <Chip v-for="tech in technologies" :key="tech" variant="info" size="sm">
         {{ tech }}
-      </span>
+      </Chip>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import Chip from './Chip.vue'
+
 interface Project {
   name: string
   period: string

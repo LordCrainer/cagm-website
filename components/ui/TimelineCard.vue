@@ -24,14 +24,7 @@
         </svg>
         {{ location }}
         <span class="mx-2">•</span>
-        <Chip
-          :variant="
-            workMode === 'Remoto'
-              ? 'success'
-              : workMode === 'Presencial'
-                ? 'info'
-                : 'warning'
-          ">
+        <Chip :variant="workModeVariant">
           {{ workMode }}
         </Chip>
       </div>
@@ -115,7 +108,20 @@ interface Props {
   cardPosition?: 'left' | 'right'
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   cardPosition: 'left'
+})
+
+const workModeVariant = computed(() => {
+  switch (props.workMode) {
+    case 'Remoto':
+      return 'success'
+    case 'Presencial':
+      return 'info'
+    case 'Híbrido':
+      return 'warning'
+    default:
+      return 'info'
+  }
 })
 </script>

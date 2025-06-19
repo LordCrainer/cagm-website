@@ -1,54 +1,28 @@
 <template>
   <section id="habilidades" class="py-16 px-6 bg-white/50">
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-8xl mx-auto">
       <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">
         Habilidades
         <span class="text-blue-600">Técnicas</span>
       </h2>
 
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Skill Categories usando v-for -->
-        <div
+      <div class="flex flex-wrap gap-8 justify-center">
+        <SkillCard
           v-for="category in skillCategories"
           :key="category.id"
-          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
-          <div
-            :class="`w-16 h-16 bg-gradient-to-r ${category.gradient} rounded-xl flex items-center justify-center mb-6`">
-            <svg
-              class="w-8 h-8 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              v-html="category.icon"></svg>
-          </div>
-
-          <h3 class="text-xl font-semibold text-gray-800 mb-4">
-            {{ category.title }}
-          </h3>
-
-          <!-- Skills -->
-          <div class="space-y-3">
-            <div
-              v-for="skill in category.skills"
-              :key="skill.name"
-              class="flex items-center space-x-3">
-              <div
-                :class="`w-2 h-2 ${getLevelColor(skill.level)} rounded-full`"></div>
-              <span class="text-gray-600">
-                {{ skill.name }}
-                <span v-if="skill.description" class="text-gray-500">
-                  ({{ skill.description }})
-                </span>
-              </span>
-            </div>
-          </div>
-        </div>
+          :title="category.title"
+          :icon="category.icon"
+          :gradient="category.gradient"
+          :skills="category.skills"
+          class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 min-w-sm" />
       </div>
     </div>
   </section>
 </template>
 
 <script lang="ts" setup>
+import SkillCard from '~/components/ui/SkillCard.vue'
+
 interface Skill {
   name: string
   level: 'green' | 'blue' | 'yellow'
@@ -102,15 +76,6 @@ const skillCategories: SkillCategory[] = [
     ]
   }
 ]
-
-const getLevelColor = (level: string) => {
-  const colors = {
-    green: 'bg-green-500',
-    blue: 'bg-blue-500',
-    yellow: 'bg-yellow-500'
-  }
-  return colors[level as keyof typeof colors] || 'bg-gray-500'
-}
 </script>
 
 <style></style>

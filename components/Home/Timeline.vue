@@ -1,6 +1,6 @@
 <template>
   <section id="experiencia" class="py-16 px-6 bg-gray-50">
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-8xl mx-auto">
       <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">
         Experiencia
         <span class="text-blue-600">Profesional</span>
@@ -25,6 +25,7 @@
                 :company="experience.company"
                 :position="experience.position"
                 :location="experience.location"
+                :work-mode="experience.workMode"
                 :period="experience.period"
                 :description="experience.description"
                 :achievements="experience.achievements"
@@ -52,6 +53,7 @@ interface Experience {
   company: string
   position: string
   location: string
+  workMode: 'Remoto' | 'Presencial' | 'Híbrido'
   period: string
   description: string
   achievements: string[]
@@ -64,6 +66,7 @@ const experiences: Experience[] = [
     company: 'Consultor Técnico Independiente',
     position: 'Desarrollador Senior por contrato',
     location: 'Guayaquil, Ecuador',
+    workMode: 'Remoto',
     period: 'Diciembre 2023 – Enero 2025',
     description: 'Gestioné el mantenimiento y la optimización de 5 sistemas complejos para un proyecto internacional.',
     achievements: [
@@ -80,6 +83,7 @@ const experiences: Experience[] = [
     company: 'Nextgen',
     position: 'Desarrollador FullStack y Líder Técnico',
     location: 'Guayaquil, Ecuador',
+    workMode: 'Híbrido',
     period: 'Junio 2021 – Abril 2024',
     description: 'Lideré múltiples proyectos y equipos de desarrollo, implementando soluciones escalables y optimizando procesos.',
     achievements: [
@@ -116,6 +120,7 @@ const experiences: Experience[] = [
     company: 'Lanubetv S.A.',
     position: 'Consultor técnico por contrato',
     location: 'Guayaquil, Ecuador',
+    workMode: 'Remoto',
     period: 'Enero 2021 – Presente',
     description: 'Dirigí el diseño, desarrollo e implementación de una nueva plataforma optimizada de gran calidad.',
     achievements: [

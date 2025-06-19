@@ -1,6 +1,6 @@
 <template>
-  <header class="bg-gray-500 text-white p-4">
-    <div class="container mx-auto flex justify-between items-center">
+  <header class="fixed top-0 w-full backdrop-blur-md bg-white z-50 p-2">
+    <div class="flex justify-between items-center">
       <HeaderTitle />
     </div>
   </header>

@@ -130,6 +130,18 @@ const generatePDF: TranslationKeys['generatePDF'] = {
 
 export default defineI18nLocale(async () => {
   return {
+    home: {
+      title: 'Desarrollador Full Stack',
+      description: 'Especializado en desarrollo web con JavaScript. Intermedio a Senior con amplio conocimiento en frontend, backend y arquitectura de software.',
+      viewProjects: 'Ver Proyectos',
+      downloadCV: 'Descargar CV',
+      skillsTitle: 'Habilidades Técnicas',
+      timelineTitle: 'Experiencia Profesional',
+      projectsTitle: 'Mis Proyectos',
+      projectsDescription: 'Una colección de proyectos en los que he trabajado, desde aplicaciones web completas hasta plataformas empresariales.',
+      projectsCTA: '¿Interesado en colaborar en un proyecto?',
+      contactMe: 'Contáctame'
+    },
     generatePDF: generatePDF,
     website: {
       title: 'AdaptCV',

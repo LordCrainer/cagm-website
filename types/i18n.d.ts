@@ -193,4 +193,16 @@ interface TranslationKeys {
     dashboard: string
     logout: string
   }
+  home: {
+    title: string
+    description: string
+    viewProjects: string
+    downloadCV: string
+    skillsTitle: string
+    timelineTitle: string
+    projectsTitle: string
+    projectsDescription: string
+    projectsCTA: string
+    contactMe: string
+  }
 }

@@ -70,6 +70,17 @@ const profile: TranslationKeys['profile'] = {
     advanced: 'Advanced',
     native: 'Native',
     placeholderLanguage: 'Select a language'
+  },
+  timeline: {
+    title: 'Timeline',
+    description:
+      'A visual representation of your professional journey, showcasing key milestones and achievements.'
+  },
+  projects: {
+    title: 'Projects',
+    description:
+      'A collection of projects I have worked on, from complete web applications to enterprise platforms.',
+    CTA: 'Interested in collaborating on a project?'
   }
 }
 
@@ -100,13 +111,15 @@ export default defineI18nLocale(async () => {
   return {
     home: {
       title: 'Full Stack Developer',
-      description: 'Specialized in web development with JavaScript. Intermediate to Senior with extensive knowledge in frontend, backend, and software architecture.',
+      description:
+        'Specialized in web development with JavaScript. Intermediate to Senior with extensive knowledge in frontend, backend, and software architecture.',
       viewProjects: 'View Projects',
       downloadCV: 'Download CV',
       skillsTitle: 'Technical Skills',
       timelineTitle: 'Professional Experience',
       projectsTitle: 'My Projects',
-      projectsDescription: 'A collection of projects I have worked on, from complete web applications to enterprise platforms.',
+      projectsDescription:
+        'A collection of projects I have worked on, from complete web applications to enterprise platforms.',
       projectsCTA: 'Interested in collaborating on a project?',
       contactMe: 'Contact Me'
     },
@@ -200,6 +213,6 @@ export default defineI18nLocale(async () => {
     },
     baseEntity: baseEntity,
     builder: builder,
-    profile: profile,
+    profile: profile
   } as TranslationKeys
 })

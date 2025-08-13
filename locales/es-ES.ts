@@ -70,6 +70,17 @@ const profile: TranslationKeys['profile'] = {
     advanced: 'Avanzado',
     native: 'Nativo',
     placeholderLanguage: 'Selecciona un idioma'
+  },
+  timeline: {
+    title: 'Línea de tiempo',
+    description:
+      'Una representación visual de tu trayectoria profesional, que muestra hitos y logros clave.'
+  },
+  projects: {
+    title: 'Proyectos',
+    description:
+      'Una colección de proyectos en los que he trabajado, desde aplicaciones web completas hasta plataformas empresariales.',
+    CTA: '¿Interesado en colaborar en un proyecto?'
   }
 }
 
@@ -132,13 +143,15 @@ export default defineI18nLocale(async () => {
   return {
     home: {
       title: 'Desarrollador Full Stack',
-      description: 'Especializado en desarrollo web con JavaScript. Intermedio a Senior con amplio conocimiento en frontend, backend y arquitectura de software.',
+      description:
+        'Especializado en desarrollo web con JavaScript. Intermedio a Senior con amplio conocimiento en frontend, backend y arquitectura de software.',
       viewProjects: 'Ver Proyectos',
       downloadCV: 'Descargar CV',
       skillsTitle: 'Habilidades Técnicas',
       timelineTitle: 'Experiencia Profesional',
       projectsTitle: 'Mis Proyectos',
-      projectsDescription: 'Una colección de proyectos en los que he trabajado, desde aplicaciones web completas hasta plataformas empresariales.',
+      projectsDescription:
+        'Una colección de proyectos en los que he trabajado, desde aplicaciones web completas hasta plataformas empresariales.',
       projectsCTA: '¿Interesado en colaborar en un proyecto?',
       contactMe: 'Contáctame'
     },

@@ -2,8 +2,7 @@
   <section id="habilidades" class="py-16 px-6 bg-white/50">
     <div class="max-w-8xl mx-auto">
       <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">
-        Habilidades
-        <span class="text-blue-600">Técnicas</span>
+        {{ t('profile.skills.title') }}
       </h2>
 
       <div class="flex flex-wrap gap-8 justify-center">
@@ -22,6 +21,9 @@
 
 <script lang="ts" setup>
 import SkillCard from '~/components/ui/SkillCard.vue'
+
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 interface Skill {
   name: string

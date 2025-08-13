@@ -73,6 +73,17 @@ interface Languages {
   placeholderLanguage: string
 }
 
+interface Timeline {
+  title: string
+  description: string
+}
+
+interface Projects {
+  title: string
+  description: string
+  CTA: string
+}
+
 interface Actions {
   add: string
   edit: string
@@ -161,6 +172,8 @@ interface TranslationKeys {
     education: Education
     skills: Skills
     languages: Languages
+    timeline: Timeline
+    projects: Projects
   }
   login: {
     password: string

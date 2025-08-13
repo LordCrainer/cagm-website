@@ -2,8 +2,7 @@
   <section id="experiencia" class="py-16 px-6 bg-gray-50">
     <div class="max-w-8xl mx-auto">
       <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">
-        Experiencia
-        <span class="text-blue-600">Profesional</span>
+        {{ t('profile.timeline.title') }}
       </h2>
 
       <div class="relative">
@@ -45,6 +44,9 @@
 </template>
 
 <script lang="ts" setup>
+
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 import TimelineCard from '~/components/ui/TimelineCard.vue'
 
 interface Project {

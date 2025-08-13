@@ -3,10 +3,9 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Section Header -->
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">Mis Proyectos</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">{{ t('profile.projects.title') }}</h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Una colección de proyectos en los que he trabajado, desde aplicaciones
-          web completas hasta plataformas empresariales.
+          {{ t('profile.projects.description') }}
         </p>
       </div>
 
@@ -21,7 +20,7 @@
       <!-- Call to Action -->
       <div class="text-center mt-12">
         <p class="text-gray-600 mb-4">
-          ¿Interesado en colaborar en un proyecto?
+          {{ t('profile.projects.CTA') }}
         </p>
         <a
           href="mailto:carlosgarcia.cagm@gmail.com"
@@ -37,7 +36,7 @@
               stroke-width="2"
               d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
           </svg>
-          Contáctame
+          {{ t('home.contactMe') }}
         </a>
       </div>
     </div>
@@ -47,4 +46,7 @@
 <script lang="ts" setup>
 import ProjectCard from '~/components/ui/ProjectCard.vue'
 const { projects } = useProjects()
+
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 </script>

@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'Carlos García | Web Developer',
-      htmlAttrs: { lang: 'es' }, // Cambia a 'en' para inglés
+      htmlAttrs: { lang: 'es' },
       meta: [
         {
           name: 'description',
@@ -50,7 +50,7 @@ export default defineNuxtConfig({
       { code: 'en', name: 'English', iso: 'en-US', file: 'en-US.ts' },
       { code: 'es', name: 'Spanish', iso: 'es-ES', file: 'es-ES.ts' }
     ],
-    defaultLocale: 'en',
+    defaultLocale: 'es',
     langDir: 'locales/',
     restructureDir: './',
     strategy: 'prefix_and_default'

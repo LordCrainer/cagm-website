@@ -14,21 +14,19 @@
           </div>
         </div>
         <h1 class="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
-          Desarrollador Full Stack
+          {{ t('home.title') }}
         </h1>
         <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-          Especializado en desarrollo web con JavaScript. Intermedio a Senior
-          con amplio conocimiento en frontend, backend y arquitectura de
-          software.
+          {{ t('home.description') }}
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             class="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer">
-            Ver Proyectos
+            {{ t('home.viewProjects') }}
           </button>
           <button
             class="px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-blue-500 hover:text-blue-600 transition-all duration-300 cursor-pointer">
-            Descargar CV
+            {{ t('home.downloadCV') }}
           </button>
         </div>
       </div>
@@ -36,7 +34,10 @@
   </section>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+</script>
 
 <style>
 /* Solo aplica la altura de 60dvh en pantallas medianas y grandes */

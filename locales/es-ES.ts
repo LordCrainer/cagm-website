@@ -254,7 +254,7 @@ const profile: TranslationKeys['profile'] = {
         title: 'Plataforma de timbres fiscales (NextGen)',
         description:
           'Un sistema serverless para la impresión de timbres fiscales, donde participé en la etapa inicial con Node.js, DynamoDB y servicios cloud.',
-        projectUrl: 'https://app.nextrack.ec/login',
+        projectUrl: 'https://app.nextrace.ec/login',
         technologies: ['Serverless', 'Node.js', 'DynamoDB'],
         isPublic: false
       },

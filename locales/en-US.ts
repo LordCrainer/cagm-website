@@ -252,7 +252,7 @@ const profile: TranslationKeys['profile'] = {
         title: 'Fiscal Stamps Platform (NextGen)',
         description:
           'A serverless system for fiscal stamp printing, where I contributed during the initial stage with Node.js, DynamoDB, and cloud services.',
-        projectUrl: 'https://app.nextrack.ec/login',
+        projectUrl: 'https://app.nextrace.ec/login',
         technologies: ['Serverless', 'Node.js', 'DynamoDB'],
         isPublic: false
       },

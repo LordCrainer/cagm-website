@@ -1,7 +1,6 @@
 <template>
   <div
     class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 max-w-xl mx-auto">
-    <!-- Header de la carta -->
     <div class="mb-4">
       <h3 class="text-xl font-bold text-gray-800 mb-1">{{ company }}</h3>
       <h4 class="text-lg font-semibold text-blue-600 mb-2">{{ position }}</h4>
@@ -20,7 +19,7 @@
         {{ location }}
         <span class="mx-2">•</span>
         <Chip :variant="workModeVariant">
-          {{ workMode }}
+          {{ workModeLabel }}
         </Chip>
       </div>
       <div class="flex items-center text-sm text-gray-500">
@@ -41,9 +40,10 @@
 
     <p class="text-gray-600 mb-4 leading-relaxed">{{ description }}</p>
 
-    <!-- Logros -->
     <div v-if="achievements.length" class="mb-4">
-      <h5 class="font-semibold text-gray-800 mb-2">Logros principales:</h5>
+      <h5 class="font-semibold text-gray-800 mb-2">
+        {{ t('profile.timeline.achievementsLabel') }}:
+      </h5>
       <ul class="space-y-2">
         <li
           v-for="(achievement, index) in achievements"
@@ -56,9 +56,10 @@
       </ul>
     </div>
 
-    <!-- Proyectos -->
     <div v-if="projects.length" class="mb-4">
-      <h5 class="font-semibold text-gray-800 mb-2">Proyectos:</h5>
+      <h5 class="font-semibold text-gray-800 mb-2">
+        {{ t('profile.timeline.projectsLabel') }}:
+      </h5>
       <div class="space-y-3">
         <div
           v-for="project in projects"
@@ -82,6 +83,7 @@
 </template>
 
 <script lang="ts" setup>
+import { useI18n } from 'vue-i18n'
 import Chip from './Chip.vue'
 
 interface Project {
@@ -94,7 +96,7 @@ interface Props {
   company: string
   position: string
   location: string
-  workMode: 'Remoto' | 'Presencial' | 'Híbrido'
+  workMode: 'remote' | 'onsite' | 'hybrid'
   period: string
   description: string
   achievements: string[]
@@ -107,16 +109,31 @@ const props = withDefaults(defineProps<Props>(), {
   cardPosition: 'left'
 })
 
+const { t } = useI18n()
+
 const workModeVariant = computed(() => {
   switch (props.workMode) {
-    case 'Remoto':
+    case 'remote':
       return 'success'
-    case 'Presencial':
+    case 'onsite':
       return 'info'
-    case 'Híbrido':
+    case 'hybrid':
       return 'warning'
     default:
       return 'info'
+  }
+})
+
+const workModeLabel = computed(() => {
+  switch (props.workMode) {
+    case 'remote':
+      return t('profile.timeline.workModes.remote')
+    case 'onsite':
+      return t('profile.timeline.workModes.onsite')
+    case 'hybrid':
+      return t('profile.timeline.workModes.hybrid')
+    default:
+      return t('profile.timeline.workModes.remote')
   }
 })
 </script>

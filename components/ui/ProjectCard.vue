@@ -31,7 +31,11 @@
         </h3>
         <div class="flex items-center space-x-2">
           <Chip :variant="project.isPublic ? 'success' : 'warning'">
-            {{ project.isPublic ? 'Público' : 'Privado' }}
+            {{
+              project.isPublic
+                ? t('profile.projects.visibilityPublic')
+                : t('profile.projects.visibilityPrivate')
+            }}
           </Chip>
         </div>
       </div>
@@ -68,7 +72,7 @@
             stroke-width="2"
             d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
         </svg>
-        Ver Proyecto
+        {{ t('profile.projects.viewProject') }}
       </a>
 
       <div
@@ -119,6 +123,7 @@
 
 <script lang="ts" setup>
 import type { Project } from '~/composables/useProjects'
+import { useI18n } from 'vue-i18n'
 import Chip from './Chip.vue';
 
 interface Props {
@@ -126,6 +131,8 @@ interface Props {
 }
 
 defineProps<Props>()
+
+const { t } = useI18n()
 
 const isDropdownOpen = ref(false)
 const dropdownRef = ref<HTMLElement>()

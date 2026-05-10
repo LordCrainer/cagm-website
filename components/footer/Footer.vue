@@ -7,7 +7,7 @@
           target="_blank"
           rel="noopener noreferrer"
           class="flex items-center justify-center w-16 h-16 border-2 border-white rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300 group"
-          title="Contactar por Telegram">
+          :title="t('footer.telegramTooltip')">
           <Icon name="simple-icons:telegram" size="md" />
         </a>
 
@@ -16,14 +16,14 @@
           target="_blank"
           rel="noopener noreferrer"
           class="flex items-center justify-center w-16 h-16 border-2 border-white rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300 group"
-          title="Contactar por WhatsApp">
+          :title="t('footer.whatsappTooltip')">
           <Icon name="simple-icons:whatsapp" size="md" />
         </a>
 
         <a
           :href="emailUrl"
           class="flex items-center justify-center w-16 h-16 border-2 border-white rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300 group"
-          title="Enviar Email">
+          :title="t('footer.emailTooltip')">
           <Icon name="material-symbols:mail-outline" size="md" />
         </a>
       </div>
@@ -31,7 +31,7 @@
       <!-- Copyright -->
       <div class="flex flex-col md:flex-row justify-center items-center">
         <div class="text-gray-400 text-sm">
-          © {{ currentYear }} Todos los derechos reservados
+          © {{ currentYear }} {{ t('footer.copyright') }}
         </div>
       </div>
     </div>
@@ -39,6 +39,10 @@
 </template>
 
 <script lang="ts" setup>
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
 const currentYear = new Date().getFullYear()
 
 // Información de contacto

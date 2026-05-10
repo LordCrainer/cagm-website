@@ -24,6 +24,61 @@ interface AboutMe {
   uploadLogo: string
 }
 
+interface SkillCardSkill {
+  name: string
+  level: 'green' | 'blue' | 'yellow'
+  description?: string
+}
+
+interface SkillCategory {
+  id: string
+  title: string
+  icon: string
+  gradient: string
+  skills: SkillCardSkill[]
+}
+
+interface TimelineProject {
+  name: string
+  period: string
+  description: string
+}
+
+interface TimelineExperience {
+  company: string
+  position: string
+  location: string
+  workMode: 'remote' | 'onsite' | 'hybrid'
+  period: string
+  description: string
+  achievements: string[]
+  projects: TimelineProject[]
+  technologies: string[]
+}
+
+interface PortfolioRepository {
+  name: string
+  url: string
+}
+
+interface PortfolioProject {
+  id: string
+  title: string
+  description: string
+  projectUrl?: string
+  githubRepos?: PortfolioRepository[]
+  technologies: string[]
+  isPublic: boolean
+  logo?: string
+}
+
+interface FooterLinks {
+  telegramTooltip: string
+  whatsappTooltip: string
+  emailTooltip: string
+  copyright: string
+}
+
 interface Experience {
   title: string
   jobTitle: string
@@ -60,6 +115,7 @@ interface Skills {
   '5to10years': string
   '10plusyears': string
   placeholderSkill: string
+  categories: SkillCategory[]
 }
 
 interface Languages {
@@ -76,12 +132,24 @@ interface Languages {
 interface Timeline {
   title: string
   description: string
+  workModes: {
+    remote: string
+    onsite: string
+    hybrid: string
+  }
+  achievementsLabel: string
+  projectsLabel: string
+  experiences: TimelineExperience[]
 }
 
 interface Projects {
   title: string
   description: string
   CTA: string
+  viewProject: string
+  visibilityPublic: string
+  visibilityPrivate: string
+  items: PortfolioProject[]
 }
 
 interface Actions {
@@ -193,6 +261,7 @@ interface TranslationKeys {
   }
   registration: {
     username: string
+    email: string
     password: string
     confirmPassword: string
     signUp: string
@@ -200,6 +269,7 @@ interface TranslationKeys {
   routes: {
     home: string
     builder: string
+    preview: string
     templates: string
     settings: string
     profile: string
@@ -218,4 +288,5 @@ interface TranslationKeys {
     projectsCTA: string
     contactMe: string
   }
+  footer: FooterLinks
 }

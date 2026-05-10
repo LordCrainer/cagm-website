@@ -3,9 +3,9 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Section Header -->
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">{{ t('profile.projects.title') }}</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">{{ t('home.projectsTitle') }}</h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          {{ t('profile.projects.description') }}
+          {{ t('home.projectsDescription') }}
         </p>
       </div>
 
@@ -20,7 +20,7 @@
       <!-- Call to Action -->
       <div class="text-center mt-12">
         <p class="text-gray-600 mb-4">
-          {{ t('profile.projects.CTA') }}
+          {{ t('home.projectsCTA') }}
         </p>
         <a
           href="mailto:carlosgarcia.cagm@gmail.com"

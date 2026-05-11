@@ -76,21 +76,41 @@ const profile: TranslationKeys['profile'] = {
           { name: 'Testing (Jest, Vitest)', level: 'blue' }
         ]
       },
-      {
-        id: 'infra',
-        title: 'Infrastructure & Observability',
-        gradient: 'from-purple-500 to-purple-600',
-        icon:
-          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"></path>',
-        skills: [
-          { name: 'CI/CD', level: 'green' },
-          { name: 'Terraform', level: 'green' },
-          { name: 'Cloud (AWS, GCP, DigitalOcean)', level: 'green' },
-          { name: 'Docker', level: 'green' },
-          { name: 'Observability (Grafana, Prometheus, Alertmanager)', level: 'blue' },
-          { name: 'Metabase', level: 'blue' }
-        ]
-      },
+    {
+      id: 'infra',
+      title: 'Infra',
+      gradient: 'from-purple-500 to-purple-600',
+      icon:
+        '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"></path>',
+      skills: [
+        { name: 'Terraform', level: 'green' },
+        { name: 'CI/CD (GitHub Actions)', level: 'green' },
+        { name: 'Docker', level: 'green' },
+        { name: 'Cloud (AWS, GCP, DigitalOcean)', level: 'green' }
+      ]
+    },
+    {
+      id: 'observability',
+      title: 'Observability',
+      gradient: 'from-indigo-500 to-indigo-600',
+      icon:
+        '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>',
+      skills: [
+        { name: 'Grafana', level: 'blue' },
+        { name: 'Prometheus', level: 'blue' },
+        { name: 'Alertmanager', level: 'blue' }
+      ]
+    },
+    {
+      id: 'analytics',
+      title: 'Analytics',
+      gradient: 'from-teal-500 to-teal-600',
+      icon:
+        '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>',
+      skills: [
+        { name: 'Metabase', level: 'blue' }
+      ]
+    },
       {
         id: 'frontend',
         title: 'Frontend',
@@ -133,7 +153,7 @@ const profile: TranslationKeys['profile'] = {
         position: 'Contract Technical Consultant',
         location: 'Guayaquil, Ecuador',
         workMode: 'remote',
-        period: 'January 2021 – Present',
+        period: 'January 2019 – Present',
         description:
           'Led the design, development, and implementation of a backend-heavy platform optimized for automation, reliability, and cost.',
         achievements: [
@@ -232,7 +252,7 @@ const profile: TranslationKeys['profile'] = {
   projects: {
     title: 'Selected Projects',
     description:
-      'A selection of backend, automation, optimization, and infrastructure projects I have worked on.',
+      'A selection of projects where I worked on migrations, automation, optimization, and backend system evolution.',
     CTA: 'Need help with backend, automation, or system optimization?',
     viewProject: 'View Project',
     visibilityPublic: 'Public',
@@ -341,21 +361,21 @@ export default defineI18nLocale(async () => {
     home: {
       title: 'Senior Software Developer focused on Backend',
       description:
-        'Backend-first, with practical experience in CI/CD, Terraform, AWS, GCP, DigitalOcean, and observability when the project needs it. I focus on solving problems, automating processes, and building maintainable systems.',
+        'I build APIs and backend systems, automate processes, and solve problems in real production environments. I have practical experience with CI/CD, Terraform, AWS, GCP, DigitalOcean, and observability when the project needs it.',
       viewProjects: 'View Projects',
       downloadCV: 'Download CV',
       skillsTitle: 'Technical Skills',
       timelineTitle: 'Professional Experience',
       projectsTitle: 'Selected Projects',
       projectsDescription:
-        'A selection of backend, automation, optimization, and infrastructure projects I have worked on.',
+        'A selection of projects where I worked on migrations, automation, optimization, and backend system evolution.',
       projectsCTA: 'Need help with backend, automation, or system optimization?',
       contactMe: 'Contact Me'
     },
     generatePDF: generatePDF,
     website: {
       description:
-        'Professional portfolio of Carlos García, a senior software developer focused on backend, automation, infrastructure, and observability.',
+        'Professional portfolio of Carlos García, a senior backend developer with experience in automation, deployment, and system operations.',
       title: 'Carlos García | Senior Backend Developer',
       keywords:
         'portfolio, senior backend developer, software developer, backend, automation, infrastructure, observability, ci/cd, terraform, aws, gcp, digitalocean, docker, nuxt, vue',
